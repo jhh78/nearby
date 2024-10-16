@@ -1,16 +1,26 @@
-# nearby
+## 디자인
 
-A new Flutter project.
+https://xd.adobe.com/view/69adbf1f-b19f-4361-b98c-9a5d5058577b-3cfe/
 
-## Getting Started
+## 환경
 
-This project is a starting point for a Flutter application.
+- flutter 3.24
+- vscode
 
-A few resources to get you started if this is your first Flutter project:
+## 기능 리스트
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- 전화인증
+- 로그인
+  - 구글
+  - 애플
+  - 이메일
+- 사진등록
+- 푸시
+  - 백그라운드
+  - 포그라운드
+- 채팅기능
+- 앱 테마조절
+- 광고
+- 결제(포인트)
+  - 구글
+  - 애플
