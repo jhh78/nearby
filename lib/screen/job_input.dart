@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:nearby/screen/home.dart';
+
+class JobInputScreen extends StatelessWidget {
+  const JobInputScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => {Get.to(() => HomeScreen())},
+      child: Scaffold(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Image.asset(
+            "images/jobInput.png",
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+          ),
+        ),
+      ),
+    );
+  }
+}
