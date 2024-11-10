@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nearby/screen/home.dart';
+import 'package:nearby/screen/home_frame.dart';
 
 class JobInputScreen extends StatelessWidget {
   const JobInputScreen({super.key});
@@ -8,7 +8,7 @@ class JobInputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {Get.to(() => HomeScreen())},
+      onTap: () => {Get.to(() => HomeFrameScreen())},
       child: Scaffold(
         body: Container(
           width: double.infinity,
