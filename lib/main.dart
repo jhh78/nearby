@@ -1,21 +1,31 @@
-import 'dart:developer';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nearby/screen/login.dart';
+import 'package:nearby/service/auth.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final AuthService authService = Get.put(AuthService());
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: GestureDetector(
-        onTap: () => {Get.to(() => LoginScreen())},
+        onTap: () => {
+          Get.offAll(
+            () => LoginScreen(),
+          )
+        },
         child: Scaffold(
           body: Container(
             width: double.infinity,

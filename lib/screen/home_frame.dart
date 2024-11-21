@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nearby/personal/personal.dart';
+import 'package:nearby/screen/personal/personal.dart';
 import 'package:nearby/screen/chart/chart.dart';
 import 'package:nearby/screen/home/favorites.dart';
 import 'package:nearby/screen/home/index.dart';
