@@ -1,18 +1,100 @@
 import 'package:flutter/material.dart';
 
 TextTheme getTextTheme() {
-  return TextTheme(
-    bodySmall: TextStyle(color: Colors.black, fontSize: 12),
-    bodyMedium: TextStyle(color: Colors.black54, fontSize: 14),
-    bodyLarge: TextStyle(color: Colors.black, fontSize: 16),
-    headlineSmall: TextStyle(color: Colors.black, fontSize: 18),
-    headlineMedium: TextStyle(color: Colors.black, fontSize: 20),
-    headlineLarge: TextStyle(color: Colors.black, fontSize: 22),
-    titleSmall: TextStyle(color: Colors.black54, fontSize: 12),
-    titleMedium: TextStyle(color: Colors.black54, fontSize: 14),
-    titleLarge: TextStyle(color: Colors.black, fontSize: 16),
-    displaySmall: TextStyle(color: Colors.black, fontSize: 24),
-    displayMedium: TextStyle(color: Colors.black, fontSize: 28),
-    displayLarge: TextStyle(color: Colors.black, fontSize: 32),
+  const fontFamily = 'NotoSerifJP';
+  const fontWeight = FontWeight.w400;
+  const color = Colors.black;
+
+  return const TextTheme(
+    labelSmall: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 10,
+    ),
+    labelMedium: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 12,
+    ),
+    labelLarge: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 14,
+    ),
+    bodySmall: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 12,
+    ),
+    bodyMedium: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 14,
+    ),
+    bodyLarge: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 16,
+    ),
+    headlineSmall: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 18,
+    ),
+    headlineMedium: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 20,
+    ),
+    headlineLarge: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 22,
+    ),
+    titleSmall: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 12,
+    ),
+    titleMedium: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 14,
+    ),
+    titleLarge: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 16,
+    ),
+    displaySmall: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 24,
+    ),
+    displayMedium: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 28,
+    ),
+    displayLarge: TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: 32,
+    ),
   );
 }
