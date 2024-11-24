@@ -1,9 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nearby/screen/login.dart';
-import 'package:nearby/screen/test/login_test.dart';
-import 'package:nearby/screen/test/styles.dart';
+import 'package:nearby/provider/system.dart';
+import 'package:nearby/screen/intro.dart';
 import 'package:nearby/utils/styles.dart';
 
 void main() async {
@@ -17,51 +16,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      theme: ThemeData(
-        textTheme: getTextTheme(),
-      ),
-      home: Scaffold(
-        body: Stack(
-          children: [
-            GestureDetector(
-              onTap: () {
-                Get.to(() => LoginScreen());
-              },
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                child: Image.asset(
-                  "images/intro.png",
-                  alignment: Alignment.center,
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 30,
-              left: 0,
-              right: 0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Get.to(() => LoginTestScreen());
-                    },
-                    child: Text("로그인 테스트"),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Get.to(() => StyleTestScreen());
-                    },
-                    child: Text("폰트 테스트"),
-                  ),
-                ],
-              ),
-            ),
-          ],
+    return Obx(() {
+      return GetMaterialApp(
+        theme: ThemeData.light().copyWith(
+          textTheme: getLightTextTheme(),
         ),
-      ),
-    );
+        darkTheme: ThemeData.dark().copyWith(
+          textTheme: getDarkTextTheme(),
+        ),
+        themeMode: systemProvider.themeMode.value,
+        home: IntroScreen(),
+      );
+    });
   }
 }
