@@ -1,13 +1,12 @@
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
-class AuthService extends GetxService {
+class AuthService {
   // 유저생성
-  void createUser(String email, String passwd) async {
+  static void createUser(String email, String passwd) async {
     try {
       final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
@@ -30,7 +29,7 @@ class AuthService extends GetxService {
   }
 
   // 이메일 로그인
-  void doEmailLogin(String email, String passwd) async {
+  static void doEmailLogin(String email, String passwd) async {
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
@@ -48,7 +47,7 @@ class AuthService extends GetxService {
   }
 
   // 구글 로그인
-  Future<UserCredential> signInWithGoogle() async {
+  static Future<UserCredential> signInWithGoogle() async {
     // Trigger the authentication flow
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
@@ -67,7 +66,7 @@ class AuthService extends GetxService {
 
   // 아이폰에서만 작동
   // 애플 로그인
-  Future<UserCredential> signInWithApple() async {
+  static Future<UserCredential> signInWithApple() async {
     final appleCredential = await SignInWithApple.getAppleIDCredential(
       scopes: [
         AppleIDAuthorizationScopes.email,
