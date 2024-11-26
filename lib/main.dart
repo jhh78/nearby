@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 // import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nearby/models/system.dart';
+import 'package:nearby/provider/system.dart';
 import 'package:nearby/screen/intro.dart';
 import 'package:nearby/utils/constants.dart';
 import 'package:nearby/utils/styles.dart';
@@ -25,24 +26,29 @@ void main() async {
   Hive.registerAdapter(SystemDataAdapter());
   await Hive.openBox<SystemData>(SYSTEM_DATA);
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final SystemProvider systemProvider = Get.put(SystemProvider());
 
   @override
   Widget build(BuildContext context) {
     return Obx(() {
       return GetMaterialApp(
         theme: ThemeData.light().copyWith(
-          textTheme: getLightTextTheme(),
+          textTheme: getLightTextTheme(context),
         ),
         darkTheme: ThemeData.dark().copyWith(
-          textTheme: getDarkTextTheme(),
+          textTheme: getDarkTextTheme(context),
         ),
         themeMode: systemProvider.themeMode.value,
-        home: UpgradeAlert(child: IntroScreen()),
+        home: UpgradeAlert(
+          dialogStyle: UpgradeDialogStyle.cupertino,
+          child: IntroScreen(),
+        ),
       );
     });
   }

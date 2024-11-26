@@ -16,7 +16,7 @@ class IntroScreen extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Get.to(() => LoginScreen());
+              Get.to(() => const LoginScreen());
             },
             child: Container(
               width: double.infinity,
@@ -36,21 +36,9 @@ class IntroScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Get.to(() => LoginTestScreen());
-                  },
-                  child: Text("로그인 테스트"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
                     Get.to(() => StyleTestScreen());
                   },
-                  child: Text("폰트 테스트"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    systemProvider.toggleTheme();
-                  },
-                  child: Text("테마"),
+                  child: const Text("폰트 테스트"),
                 ),
               ],
             ),

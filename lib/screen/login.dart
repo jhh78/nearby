@@ -20,7 +20,10 @@ class LoginScreen extends StatelessWidget {
     log("Email Login");
   }
 
-  void handleRegister() => Get.offAll(() => PolicyScreen(), transition: Transition.fade);
+  void handleRegister() => Get.offAll(
+        () => const PolicyScreen(),
+        transition: Transition.fade,
+      );
 
   @override
   Widget build(BuildContext context) {

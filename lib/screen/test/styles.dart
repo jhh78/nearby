@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:nearby/provider/system.dart';
 
 class StyleTestScreen extends StatelessWidget {
-  const StyleTestScreen({super.key});
+  StyleTestScreen({super.key});
+
+  final SystemProvider systemProvider = Get.put(SystemProvider());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("스타일 테스트"),
+        title: const Text("스타일 테스트"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          )
+        ],
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -24,7 +35,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.labelSmall,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -37,7 +48,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.labelMedium,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -50,7 +61,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -63,7 +74,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -76,7 +87,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -89,7 +100,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -102,7 +113,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -115,7 +126,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -128,7 +139,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -141,7 +152,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -154,7 +165,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -167,7 +178,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -180,7 +191,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.displaySmall,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -193,7 +204,7 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.displayMedium,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
               Column(
@@ -206,11 +217,18 @@ class StyleTestScreen extends StatelessWidget {
                     "漢字 12345 ひらがな カタカナ",
                     style: Theme.of(context).textTheme.displayLarge,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
             ],
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => systemProvider.toggleTheme(),
+        child: const Icon(
+          Icons.change_circle,
+          size: 40,
         ),
       ),
     );

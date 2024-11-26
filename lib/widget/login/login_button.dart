@@ -48,7 +48,7 @@ class LoginButton extends StatelessWidget {
           const SizedBox(width: 10),
           Text(
             text,
-            style: Theme.of(context).textTheme.headlineSmall,
+            style: Theme.of(context).textTheme.bodySmall,
           ),
         ],
       ),
