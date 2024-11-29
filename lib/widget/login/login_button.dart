@@ -20,6 +20,12 @@ class LoginButton extends StatelessWidget {
   final bool isGoogle;
   final bool isApple;
 
+  final String googleSigninLight = "assets/images/signin.google.light.png";
+  final String googleSigninDark = "assets/images/signin.google.dark.png";
+
+  final String appleSigninLight = "assets/images/signin.google.light.png";
+  final String appleSigninDark = "assets/images/signin.google.dark.png";
+
   Size getButtonWidthSize(BuildContext context) {
     return Size(MediaQuery.of(context).size.width * 0.85, 50);
   }
@@ -27,7 +33,7 @@ class LoginButton extends StatelessWidget {
   Widget renderButtonArea(BuildContext context) {
     if (isGoogle) {
       return Image.asset(
-        systemProvider.themeMode.value == ThemeMode.dark ? "assets/images/signin.google.dark.png" : "assets/images/signin.google.light.png",
+        systemProvider.themeMode.value == ThemeMode.dark ? googleSigninDark : googleSigninLight,
         width: 250,
         height: 75,
       );
@@ -35,7 +41,7 @@ class LoginButton extends StatelessWidget {
 
     if (isApple) {
       return Image.asset(
-        systemProvider.themeMode.value == ThemeMode.dark ? "assets/images/signin.google.dark.png" : "assets/images/signin.google.light.png",
+        systemProvider.themeMode.value == ThemeMode.dark ? googleSigninDark : googleSigninLight,
         width: 250,
         height: 75,
       );
