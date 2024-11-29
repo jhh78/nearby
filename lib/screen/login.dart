@@ -83,15 +83,15 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // SizedBox(
-          //   width: double.infinity,
-          //   height: double.infinity,
-          //   child: Image.asset(
-          //     "assets/images/login.png",
-          //     fit: BoxFit.cover,
-          //     alignment: Alignment.center,
-          //   ),
-          // ),
+          SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: Image.asset(
+              "assets/images/login.png",
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+            ),
+          ),
           Positioned(
             bottom: 30,
             left: 0,
