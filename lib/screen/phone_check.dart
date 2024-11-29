@@ -15,7 +15,7 @@ class PhoneCheckScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/phoneCheck.png",
+            "assets/images/phoneCheck.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

@@ -22,7 +22,7 @@ class IntroScreen extends StatelessWidget {
               width: double.infinity,
               height: double.infinity,
               child: Image.asset(
-                "images/intro.png",
+                "assets/images/intro.png",
                 alignment: Alignment.center,
               ),
             ),

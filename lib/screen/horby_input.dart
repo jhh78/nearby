@@ -15,7 +15,7 @@ class HorbyInputScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/horby.png",
+            "assets/images/horby.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

@@ -81,4 +81,20 @@ class AuthService {
 
     return await FirebaseAuth.instance.signInWithCredential(oauthCredential);
   }
+
+  static Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
+  static User? getCurrentUser() {
+    return FirebaseAuth.instance.currentUser;
+  }
+
+  static bool isUserLoggedIn() {
+    return FirebaseAuth.instance.currentUser != null;
+  }
+
+  static String? getUserUID() {
+    return FirebaseAuth.instance.currentUser?.uid;
+  }
 }

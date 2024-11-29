@@ -14,7 +14,7 @@ class PolicyScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/policy.png",
+            "assets/images/policy.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

@@ -13,7 +13,7 @@ class HomeChartScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/chart.png",
+            "assets/images/chart.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

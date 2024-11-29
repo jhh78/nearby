@@ -14,7 +14,7 @@ class BodyProfileScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/bodyProfile.png",
+            "assets/images/bodyProfile.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

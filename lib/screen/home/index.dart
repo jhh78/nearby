@@ -12,7 +12,7 @@ class HomeIndexScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/home.png",
+            "assets/images/home.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),
@@ -31,7 +31,7 @@ class HomeIndexScreen extends StatelessWidget {
                 ),
               ),
               child: Image.asset(
-                "images/write.png",
+                "assets/images/write.png",
                 fit: BoxFit.cover,
                 alignment: Alignment.center,
               ),

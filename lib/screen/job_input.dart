@@ -14,7 +14,7 @@ class JobInputScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/jobInput.png",
+            "assets/images/jobInput.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

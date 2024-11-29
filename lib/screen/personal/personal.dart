@@ -11,7 +11,7 @@ class PersonalScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/personal.png",
+            "assets/images/personal.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

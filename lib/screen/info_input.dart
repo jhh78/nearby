@@ -14,7 +14,7 @@ class InfoInputScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/infoInput.png",
+            "assets/images/infoInput.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

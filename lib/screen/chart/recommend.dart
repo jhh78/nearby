@@ -11,7 +11,7 @@ class ChartRecommendScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/recomend.png",
+            "assets/images/recomend.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),

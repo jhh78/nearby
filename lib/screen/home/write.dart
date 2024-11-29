@@ -11,7 +11,7 @@ class HomeWriteScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Image.asset(
-            "images/write.png",
+            "assets/images/write.png",
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),
