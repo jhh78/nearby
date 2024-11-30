@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:nearby/models/user.dart';
 
 part 'system.g.dart';
 
@@ -8,11 +9,15 @@ class SystemData extends HiveObject {
   @HiveField(0)
   final int themeMode;
 
-  SystemData({required this.themeMode});
+  SystemData({
+    required this.themeMode,
+  });
 
   ThemeMode get theme => ThemeMode.values[themeMode];
 
-  factory SystemData.fromThemeMode(ThemeMode themeMode) {
-    return SystemData(themeMode: themeMode.index);
+  Map<String, dynamic> toMap() {
+    return {
+      'themeMode': themeMode,
+    };
   }
 }

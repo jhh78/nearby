@@ -10,30 +10,30 @@ import 'package:nearby/screen/home/write.dart';
 
 const double bottomBavigationIconSize = 32;
 
-class HomeFrameScreen extends StatefulWidget {
-  HomeFrameScreen({super.key});
+class HomeLayoutScreen extends StatefulWidget {
+  const HomeLayoutScreen({super.key});
 
   @override
-  State<HomeFrameScreen> createState() => _HomeFrameScreenState();
+  State<HomeLayoutScreen> createState() => _HomeLayoutScreenState();
 }
 
-class _HomeFrameScreenState extends State<HomeFrameScreen> {
+class _HomeLayoutScreenState extends State<HomeLayoutScreen> {
   int _stackIndex = 0;
   int _notificationCount = 5;
 
   @override
   Widget build(BuildContext context) {
-    log('HomeFrameScreen build stackIndex: $_stackIndex');
+    log('HomeLayoutScreen build stackIndex: $_stackIndex');
     return Scaffold(
       body: IndexedStack(
         sizing: StackFit.expand,
         index: _stackIndex,
         children: [
           HomeIndexScreen(),
-          SizedBox.shrink(),
-          HomeFavoritesScreen(),
-          HomeChartScreen(),
-          PersonalScreen(),
+          const SizedBox.shrink(),
+          const HomeFavoritesScreen(),
+          const HomeChartScreen(),
+          const PersonalScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -49,14 +49,14 @@ class _HomeFrameScreenState extends State<HomeFrameScreen> {
             Get.bottomSheet(
               Container(
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),
                   ),
                 ),
-                child: HomeWriteScreen(),
+                child: const HomeWriteScreen(),
               ),
             );
           } else {
@@ -74,18 +74,18 @@ class _HomeFrameScreenState extends State<HomeFrameScreen> {
                   Positioned(
                     right: 0,
                     child: Container(
-                      padding: EdgeInsets.all(1),
+                      padding: const EdgeInsets.all(1),
                       decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(6),
                       ),
-                      constraints: BoxConstraints(
+                      constraints: const BoxConstraints(
                         minWidth: 12,
                         minHeight: 12,
                       ),
                       child: Text(
                         '$_notificationCount',
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 8,
                         ),

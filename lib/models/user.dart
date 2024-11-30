@@ -1,18 +1,26 @@
-class UserData {
-  final String uid;
+import 'package:hive/hive.dart';
+
+part 'user.g.dart';
+
+@HiveType(typeId: 1)
+class UserData extends HiveObject {
+  @HiveField(0)
+  String? authType;
+
+  @HiveField(1)
+  String? uid;
 
   UserData({
-    required this.uid,
+    this.authType,
+    this.uid,
   });
 
-  factory UserData.fromMap(Map<String, dynamic> data) {
-    return UserData(
-      uid: data['uid'],
-    );
-  }
+  String get authTypeValue => authType ?? '';
+  String get userId => uid ?? '';
 
   Map<String, dynamic> toMap() {
     return {
+      'authType': authType,
       'uid': uid,
     };
   }

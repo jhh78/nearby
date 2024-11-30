@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nearby/screen/info_input.dart';
 import 'package:nearby/screen/profile_input.dart';
+import 'package:nearby/service/router.dart';
 
 class PhoneCheckScreen extends StatelessWidget {
   const PhoneCheckScreen({super.key});
@@ -9,7 +10,7 @@ class PhoneCheckScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {Get.to(() => InfoInputScreen())},
+      onTap: RouterService.moveInfoInput,
       child: Scaffold(
         body: Container(
           width: double.infinity,

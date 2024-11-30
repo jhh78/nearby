@@ -1,6 +1,7 @@
 // BOX
-String SYSTEM_DATA_BOX = 'system_data_box';
+String SYSTEM_BOX = 'system_box';
+String USER_BOX = 'user_box';
 
 // Datastore
-String THEME_MODE = 'theme_mode';
+String SYSTEM_DATA = 'system_data';
 String USER_DATA = 'user_data';

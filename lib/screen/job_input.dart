@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nearby/screen/home_frame.dart';
+import 'package:nearby/service/router.dart';
 
 class JobInputScreen extends StatelessWidget {
   const JobInputScreen({super.key});
@@ -8,7 +9,7 @@ class JobInputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {Get.to(() => HomeFrameScreen())},
+      onTap: RouterService.moveHomeLayout,
       child: Scaffold(
         body: Container(
           width: double.infinity,

@@ -3,18 +3,31 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nearby/models/user.dart';
+import 'package:nearby/provider/system.dart';
+import 'package:nearby/screen/home/index.dart';
 import 'package:nearby/screen/policy.dart';
 import 'package:nearby/service/auth.dart';
+import 'package:nearby/service/router.dart';
+import 'package:nearby/utils/constants.dart';
+import 'package:nearby/utils/hive.dart';
 import 'package:nearby/widget/login/login_button.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+  final SystemProvider systemProvider = Get.put(SystemProvider());
 
   void handleGoogleLogin() {
     AuthService.signInWithGoogle().then((value) {
       log("Google Login >>>>>> ${value.user?.uid}");
       if (AuthService.isUserLoggedIn()) {
+        final systemData = systemProvider.userBox.get(USER_DATA) ?? UserData();
+        systemData.authType = AUTH_TYPE_GOOGLE;
+        systemData.uid = AuthService.getUserUID();
+        systemProvider.userBox.put(USER_DATA, systemData);
         log("User is logged in with UID: ${AuthService.getUserUID()}");
+
+        RouterService.moveHomeLayout();
       } else {
         log("User is not logged in");
       }
@@ -25,7 +38,12 @@ class LoginScreen extends StatelessWidget {
     AuthService.signInWithApple().then((value) {
       log("Apple Login >>>>>> ${value.user?.uid}");
       if (AuthService.isUserLoggedIn()) {
+        final systemData = systemProvider.userBox.get(USER_DATA) ?? UserData();
+        systemData.authType = AUTH_TYPE_APPLE;
+        systemData.uid = AuthService.getUserUID();
+        systemProvider.userBox.put(USER_DATA, systemData);
         log("User is logged in with UID: ${AuthService.getUserUID()}");
+        RouterService.moveHomeLayout();
       } else {
         log("User is not logged in");
       }
@@ -72,11 +90,6 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void handleRegister() => Get.offAll(
-        () => const PolicyScreen(),
-        transition: Transition.fade,
-      );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,7 +129,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 LoginButton(
                   text: "新規登録",
-                  callback: handleRegister,
+                  callback: RouterService.movePolicy,
                 ),
               ],
             ),

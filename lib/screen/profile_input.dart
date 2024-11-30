@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nearby/screen/horby_input.dart';
+import 'package:nearby/service/router.dart';
 
 class ProfileInputScreen extends StatelessWidget {
   const ProfileInputScreen({super.key});
@@ -10,7 +11,7 @@ class ProfileInputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {Get.to(() => HorbyInputScreen())},
+      onTap: RouterService.moveHobbyInput,
       child: Scaffold(
         body: Container(
           width: double.infinity,

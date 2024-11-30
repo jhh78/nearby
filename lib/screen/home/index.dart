@@ -1,11 +1,17 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nearby/provider/system.dart';
 
 class HomeIndexScreen extends StatelessWidget {
-  const HomeIndexScreen({super.key});
+  HomeIndexScreen({super.key});
+  final SystemProvider systemProvider = Get.put(SystemProvider());
 
   @override
   Widget build(BuildContext context) {
+    log(systemProvider.userBox.toMap().toString());
+    log(systemProvider.systemBox.toMap().toString());
     return Scaffold(
       body: Center(
         child: Container(

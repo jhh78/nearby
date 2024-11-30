@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nearby/provider/system.dart';
+import 'package:nearby/screen/home/index.dart';
 import 'package:nearby/screen/login.dart';
 import 'package:nearby/screen/test/login_test.dart';
 import 'package:nearby/screen/test/styles.dart';
+import 'package:nearby/service/router.dart';
+import 'package:nearby/utils/hive.dart';
 
 class IntroScreen extends StatelessWidget {
   IntroScreen({super.key});
@@ -16,7 +19,12 @@ class IntroScreen extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Get.to(() => const LoginScreen());
+              if (systemProvider.userBox.get(USER_DATA) == null) {
+                RouterService.moveLogin();
+                return;
+              }
+
+              RouterService.moveHomeLayout();
             },
             child: Container(
               width: double.infinity,

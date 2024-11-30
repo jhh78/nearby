@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,8 +6,10 @@ import 'package:get/get.dart';
 // import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nearby/models/system.dart';
+import 'package:nearby/models/user.dart';
 import 'package:nearby/provider/system.dart';
 import 'package:nearby/screen/intro.dart';
+import 'package:nearby/utils/hive.dart';
 import 'package:nearby/utils/styles.dart';
 import 'package:upgrader/upgrader.dart';
 import 'package:path_provider/path_provider.dart';
@@ -23,6 +26,8 @@ void main() async {
   // Hive 초기화 및 박스 열기
   await Hive.initFlutter(appDocumentDir.path);
   Hive.registerAdapter(SystemDataAdapter());
+  Hive.registerAdapter(UserDataAdapter());
+
   runApp(MyApp());
 }
 
