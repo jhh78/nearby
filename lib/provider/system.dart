@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:nearby/models/system.dart';
+import 'package:nearby/utils/hive.dart';
 
 class SystemProvider extends GetxService {
   Rx<ThemeMode> themeMode = ThemeMode.light.obs;
@@ -16,8 +17,8 @@ class SystemProvider extends GetxService {
   }
 
   void _loadTheme() async {
-    systemBox = await Hive.openBox<SystemData>('systemBox');
-    final systemData = systemBox.get('themeData');
+    systemBox = await Hive.openBox<SystemData>(SYSTEM_DATA_BOX);
+    final systemData = systemBox.get(THEME_MODE);
     if (systemData != null) {
       themeMode.value = systemData.theme;
     } else {
@@ -34,8 +35,9 @@ class SystemProvider extends GetxService {
     _saveTheme();
   }
 
-  void _saveTheme() {
+  void _saveTheme() async {
+    systemBox = await Hive.openBox<SystemData>(SYSTEM_DATA_BOX);
     final systemData = SystemData.fromThemeMode(themeMode.value);
-    systemBox.put('themeData', systemData);
+    systemBox.put(THEME_MODE, systemData);
   }
 }

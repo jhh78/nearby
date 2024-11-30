@@ -7,7 +7,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nearby/models/system.dart';
 import 'package:nearby/provider/system.dart';
 import 'package:nearby/screen/intro.dart';
-import 'package:nearby/utils/constants.dart';
 import 'package:nearby/utils/styles.dart';
 import 'package:upgrader/upgrader.dart';
 import 'package:path_provider/path_provider.dart';
@@ -24,8 +23,6 @@ void main() async {
   // Hive 초기화 및 박스 열기
   await Hive.initFlutter(appDocumentDir.path);
   Hive.registerAdapter(SystemDataAdapter());
-  await Hive.openBox<SystemData>(SYSTEM_DATA);
-
   runApp(MyApp());
 }
 
